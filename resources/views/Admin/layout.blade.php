@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Laravel</title>
+        <meta charset="utf-8">
+
+        <title>@section('title')鉴金阁@show</title>
 
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
         <link href="{{ asset('/assets/global/plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
@@ -20,7 +22,9 @@
 <!-- <link rel="shortcut icon" href="favicon.ico"/> -->
 
     </head>
+    @section('body')
     <body  class="page-boxed page-header-fixed page-container-bg-solid page-sidebar-closed-hide-logo page-sidebar-closed page-sidebar-closed-hide-logo">
+    @show
         <div class="page-header navbar navbar-fixed-top">
             <!-- BEGIN HEADER INNER -->
             <div class="page-header-inner container">
@@ -497,8 +501,16 @@
                                 </a>
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="javascript:;">
-                                        <span class="badge badge-roundless badge-danger">new</span>Layout with Fontawesome Icons</a>
+                                        <a href="{{ url('/admin/goods/show') }}">
+                                        <span class="badge badge-roundless badge-danger">new</span>商品列表</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/admin/goods/add') }}">
+                                        <span class="badge badge-roundless badge-danger">new</span>添加商品</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/admin/goods/edit') }}">
+                                        <span class="badge badge-roundless badge-danger">new</span>编辑商品</a>
                                     </li>
                                 </ul>
                             </li>
@@ -654,21 +666,27 @@
                         <!-- END STYLE CUSTOMIZER -->
                         <!-- BEGIN PAGE HEADER-->
                         <h3 class="page-title">
-                        Sidebar Closed Page <small>sidebar closed page</small>
+                        鉴金阁 <small>后台管理系统</small>
                         </h3>
                         <div class="page-bar">
                             <ul class="page-breadcrumb">
                                 <li>
                                     <i class="fa fa-home"></i>
-                                    <a href="index.html">Home</a>
-                                    <i class="fa fa-angle-right"></i>
+                                    @section('Breadcrumbs_1')
+                                    <a href="/">Home</a>
+                                    @show
                                 </li>
                                 <li>
+                                    @section('Breadcrumbs_2')
+                                    <i class="fa fa-angle-right"></i>
                                     <a href="#">Page Layouts</a>
-                                    <i class="fa fa-angle-right"></i>
+                                    @show
                                 </li>
                                 <li>
+                                    @section('Breadcrumbs_3')
+                                    <i class="fa fa-angle-right"></i>
                                     <a href="#">Sidebar Closed Page</a>
+                                    @show
                                 </li>
                             </ul>
                             <div class="page-toolbar">
@@ -699,7 +717,7 @@
                         <!-- BEGIN PAGE CONTENT-->
                         <div class="row">
                             <div class="col-md-12">
-                                
+                                @yield('pageContent')
                             </div>
                         </div>
                         <!-- END PAGE CONTENT-->
