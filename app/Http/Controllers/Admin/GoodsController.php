@@ -13,11 +13,9 @@ class GoodsController extends BaseController
         echo '<script>alert("你最帅了")</script>';
     }
     public function custom($action = 'show'){
-        var_dump($_POST);exit;
         if($_POST){
             return $this->$action();
         }
-
         return view('Admin/Goods/'.$action);
         
     }

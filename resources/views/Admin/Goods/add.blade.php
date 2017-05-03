@@ -22,7 +22,7 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-                <form action="{{ url('/admin/goods/add') }}" method="POST" class="form-horizontal">
+                {!! Form::open(['class'=>'form-horizontal']) !!}
                     <div class="form-actions top">
                         
                     </div>
@@ -52,7 +52,8 @@
                             </div>
                         </div>
                     </div>
-                </form>
+
+                {!! Form::close() !!}
                 <!-- END FORM-->
             </div>
         </div>
