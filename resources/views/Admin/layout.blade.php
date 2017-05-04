@@ -19,7 +19,8 @@
         <link id="style_color" href="{{ asset('/assets/admin/layout2/css/themes/grey.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('/assets/admin/layout2/css/custom.css') }}" rel="stylesheet" type="text/css"/>
         <!-- END THEME STYLES -->
-<!-- <link rel="shortcut icon" href="favicon.ico"/> -->
+        @yield('PAGE-LEVEL')
+        <link rel="shortcut icon" href="{{ asset('/assets/img/favicon.ico') }}"/>
 
     </head>
     @section('body')
@@ -755,11 +756,22 @@
         <script src="{{ asset('/assets/global/scripts/metronic.js') }}" type="text/javascript"></script>
         <script src="{{ asset('/assets/admin/layout2/scripts/layout.js') }}" type="text/javascript"></script>
         <script src="{{ asset('/assets/admin/layout2/scripts/demo.js') }}" type="text/javascript"></script>
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <script type="text/javascript" src="{{ asset('/assets/global/plugins/select2/select2.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js') }}"></script>
+        <!-- END PAGE LEVEL PLUGINS -->
+        <script src="{{ asset('/assets/admin/pages/scripts/table-advanced.js') }}" type="text/javascript"></script>
+
         <script>
         jQuery(document).ready(function() {    
-           Metronic.init(); // init metronic core components
-        Layout.init(); // init current layout
-        Demo.init(); // init demo features
+            Metronic.init(); // init metronic core components
+            Layout.init(); // init current layout
+            Demo.init(); // init demo features
+            TableAdvanced.init();
         });
         </script>
     </body>
