@@ -31,6 +31,9 @@
                     <th>
                          价格
                     </th>
+                    <th>
+                         图片
+                    </th>
                     <th class="col-xs-3">
                          操作
                     </th>
@@ -43,6 +46,9 @@
                     <td>{{ $value->id }}</td>
                     <td>{{ $value->goods_name }}</td>
                     <td>{{ $value->goods_price }}</td>
+                    <td>
+                        <img src="{{ '/upload/'.$value->goods_images}}">
+                    </td>
                     <td>
                         <a href="javascript:;" class="col-xs-2">
                             <i class="fa fa-pencil fa-fw"></i>

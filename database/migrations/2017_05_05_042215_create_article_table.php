@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticleTable extends Migration
+class CreateGoodsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,6 +16,7 @@ class CreateArticleTable extends Migration
             $table->increments('id');
             $table->string('goods_name');
             $table->float('goods_price');
+            $table->string('goods_images');
             $table->timestamps();
         });
     }

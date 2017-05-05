@@ -2,29 +2,60 @@
 
 namespace App\Http\Controllers\Admin;
 
-// use Illuminate\Foundation\Bus\DispatchesJobs;
+use App\Http\Requests;
+
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
-// use Illuminate\Foundation\Validation\ValidatesRequests;
-// use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Http\Request;
+
 
 class GoodsController extends BaseController
 {
-    public function add($arr){
-        if($_POST){
-            DB::table('jjg_goods')->insert([
-                'goods_name'=>$arr['goodsName'],
-                'goods_price'=>$arr['goodsPrice'],
-            ]);
-            return $this->show();
-        }
-        return view('Admin/Goods/add');
-    }
-    public function custom($action = 'show'){
-        return $this->$action($_POST);
-    }
+    /*
+        商品管理
+        @add: $request为图片相关信息
+    */
     public function show(){
         $goodsData = DB::table('jjg_goods')->get();
         return view('Admin/Goods/show',['goodsData'=>$goodsData]);
+    }
+
+    public function add(Request $request){
+        if($_POST){
+            $file = $request->file('fileName');
+            $No = rand(1,100).'/'.time();
+            $dir = 'upload/'.$No;
+            $filePath = $No.'/'.$file->getClientOriginalName();
+            $file->move($dir,$file->getClientOriginalName());
+
+            DB::table('jjg_goods')->insert([
+                'goods_name'=>$_POST['goodsName'],
+                'goods_price'=>$_POST['goodsPrice'],
+                'goods_images'=>$filePath,
+            ]);
+            return redirect()->action('Admin\GoodsController@show');
+        }
+        return view('Admin/Goods/add');
+    }
+    
+    public function edit(Request $request, $goodsId){
+        if($_POST){
+            // $file = $request->file('fileName');
+            // $No = rand(1,100).'/'.time();
+            // $dir = 'upload/'.$No;
+            
+            // $filePath = $No.'/'.$file->getClientOriginalName();
+            // $file->move($dir,$file->getClientOriginalName());
+
+            DB::table('jjg_goods')->where('id', $goodsId)->update([
+                'goods_name'=>$_POST['goodsName'],
+                'goods_price'=>$_POST['goodsPrice'],
+                // 'goods_images'=>$filePath,
+            ]);
+            return redirect()->action('Admin\GoodsController@show');
+        }
+
+        $goodsData = DB::table('jjg_goods')->where('id', $goodsId)->first();
+        return view('Admin/Goods/edit', ['goodsData'=>$goodsData]);
     }
 }

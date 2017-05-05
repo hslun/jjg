@@ -22,7 +22,7 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-                {!! Form::open(['class'=>'form-horizontal']) !!}
+                {!! Form::open(['class'=>'form-horizontal','files'=>'true']) !!}
                     <div class="form-actions top">
                         
                     </div>
@@ -37,6 +37,12 @@
                             <label class="col-md-3 control-label">价格</label>
                             <div class="col-md-4">
                                 <input type="text" name="goodsPrice" class="form-control" placeholder="Email price">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">图片</label>
+                            <div class="col-md-4">
+                                {!! Form::file('fileName') !!}
                             </div>
                         </div>
                         

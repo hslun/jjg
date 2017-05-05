@@ -14,5 +14,10 @@
 Route::get('/admin', function () {
     return view('Admin/index');
 });
-Route::any('/admin/goods/{action}', 'Admin\GoodsController@custom');
+
+$goodsList = ['add','edit','show','delete'];
+foreach($goodsList as $value){
+    Route::any('/admin/goods/'.$value.'/{id}', 'Admin\GoodsController@'.$value);
+}
+
 Route::get('/admin/login', 'Admin\IndexController@login');
