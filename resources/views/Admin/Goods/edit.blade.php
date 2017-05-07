@@ -1,5 +1,13 @@
 @extends('Admin.layout')
 
+@section('Breadcrumbs_2')
+<a href="#">商品管理</a>
+@stop
+
+@section('Breadcrumbs_3')
+<a href="#">编辑</a>
+@stop
+
 @section('pageContent')
 <div class="tabbable tabbable-custom tabbable-noborder tabbable-reversed">
     
@@ -42,10 +50,10 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">图片</label>
                             <div class="col-md-2">
-                                <img src="{{ '/upload/'.$goodsData->goods_images }}" alt="">
+                                <img style="width:60px" src="{{ '/upload/'.$goodsData->goods_images }}" alt="">
                             </div>
                             <div class="col-md-2">
-                                <!-- {!! Form::file('fileName') !!} -->
+                                {!! Form::file('fileName') !!}
                             </div>
                         </div>
                         
@@ -55,7 +63,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <button type="submit" class="btn green">Submit</button>
-                                        <button type="button" class="btn default">Cancel</button>
+                                        <button type="button" onclick="window.location='/admin/goods/show'" class="btn default">Back</button>
                                     </div>
                                 </div>
                             </div>

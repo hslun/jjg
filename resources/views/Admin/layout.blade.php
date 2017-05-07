@@ -5,7 +5,7 @@
 
         <title>@section('title')鉴金阁@show</title>
 
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+        <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"> -->
         <link href="{{ asset('/assets/global/plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('/assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('/assets/global/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
@@ -461,7 +461,7 @@
                                         <i class="icon-lock"></i> Lock Screen </a>
                                     </li>
                                     <li>
-                                        <a href="login.html">
+                                        <a href="/admin/login">
                                         <i class="icon-key"></i> Log Out </a>
                                     </li>
                                 </ul>
@@ -674,18 +674,18 @@
                                 <li>
                                     <i class="fa fa-home"></i>
                                     @section('Breadcrumbs_1')
-                                    <a href="/">Home</a>
+                                    <a href="/admin">Home</a>
                                     @show
                                 </li>
                                 <li>
-                                    @section('Breadcrumbs_2')
                                     <i class="fa fa-angle-right"></i>
+                                    @section('Breadcrumbs_2')
                                     <a href="#">Page Layouts</a>
                                     @show
                                 </li>
                                 <li>
-                                    @section('Breadcrumbs_3')
                                     <i class="fa fa-angle-right"></i>
+                                    @section('Breadcrumbs_3')
                                     <a href="#">Sidebar Closed Page</a>
                                     @show
                                 </li>
@@ -697,18 +697,9 @@
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
+                                            @section('action_1')
                                             <a href="#">Action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Another action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Something else here</a>
-                                        </li>
-                                        <li class="divider">
-                                        </li>
-                                        <li>
-                                            <a href="#">Separated link</a>
+                                            @show
                                         </li>
                                     </ul>
                                 </div>
@@ -774,5 +765,8 @@
             TableAdvanced.init();
         });
         </script>
+        <!-- <script src="{{ asset('/assets/global/plugins/jquery.min.js') }}" type="text/javascript"></script> -->
+        @yield('pageJs')
+   
     </body>
 </html>

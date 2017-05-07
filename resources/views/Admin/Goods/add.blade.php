@@ -1,5 +1,13 @@
 @extends('Admin.layout')
 
+@section('Breadcrumbs_2')
+<a href="show">商品管理</a>
+@stop
+
+@section('Breadcrumbs_3')
+<a href="#">添加</a>
+@stop
+
 @section('pageContent')
 <div class="tabbable tabbable-custom tabbable-noborder tabbable-reversed">
     

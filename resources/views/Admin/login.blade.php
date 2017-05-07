@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | Login Options - Login Form 1</title>
+<title>鉴金阁-后台登录</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -52,8 +52,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END SIDEBAR TOGGLER BUTTON -->
 <!-- BEGIN LOGO -->
 <div class="logo">
-    <a href="index.html">
-    <img src="../../assets/admin/layout2/img/logo-big.png" alt=""/>
+    <a href="/">
+    <img src="{{ asset('/assets/img/logo.jpg') }}" style="width:280px;position: absolute;top: 35px;left: 42%;" alt=""/>
     </a>
 </div>
 <!-- END LOGO -->

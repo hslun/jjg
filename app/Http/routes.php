@@ -11,13 +11,21 @@
 |
 */
 
+Route::get('/', 'Home\IndexController@index');
+
 Route::get('/admin', function () {
     return view('Admin/index');
 });
 
 $goodsList = ['add','edit','show','delete'];
-foreach($goodsList as $value){
-    Route::any('/admin/goods/'.$value.'/{id}', 'Admin\GoodsController@'.$value);
+foreach($goodsList as $key=>$value){
+	if($value == 'edit' || $value == 'delete'){
+    	Route::any('/admin/goods/'.$value.'/{id}', 'Admin\GoodsController@'.$value);
+	}
+	if($key == count($goodsList)-1){
+		Route::any('/admin/goods/', 'Admin\GoodsController@show');
+	}
+	Route::any('/admin/goods/'.$value, 'Admin\GoodsController@'.$value);
 }
 
 Route::get('/admin/login', 'Admin\IndexController@login');
