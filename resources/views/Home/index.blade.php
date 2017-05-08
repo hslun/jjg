@@ -39,7 +39,7 @@
     <!-- slide two start -->
     <div class="ls-slide ls-slide2" data-ls="offsetxin: right; slidedelay: 7000; transition2d: 110,111,112,113;">
 
-      <img src="../../assets/frontend/pages/img/layerslider/slide2/bg.jpg" class="ls-bg" alt="Slide background">
+      <img src="{{ asset('assets/img/bg-2.jpg') }}" class="ls-bg" alt="Slide background">
       
       <div class="ls-l ls-title" style="top: 40%; left: 21%; white-space: nowrap;" data-ls="
       fade: true; 

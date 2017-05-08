@@ -530,8 +530,8 @@
                                 </a>
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="javascript:;">
-                                        Google Maps</a>
+                                        <a href="/">
+                                        前台首页</a>
                                     </li>
                                 </ul>
                             </li>

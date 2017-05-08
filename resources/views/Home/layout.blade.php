@@ -550,7 +550,8 @@ License: You must have a valid license purchased only from themeforest (the abov
 
     <!-- BEGIN LayerSlider -->
     <script src="{{ asset('/assets/global/plugins/slider-layer-slider/js/greensock.js') }}" type="text/javascript"></script><!-- External libraries: GreenSock -->
-    <script src="{{ asset('/assets/global/plugins/slider-layer-slider/js/layerslider.transitions.js" type="text/javascript') }}"></script><!-- LayerSlider script files -->
+    <script src="{{ asset('/assets/global/plugins/slider-layer-slider/js/layerslider.transitions.js') }}" type="text/javascript"></script>
+    <!-- LayerSlider script files -->
     <script src="{{ asset('/assets/global/plugins/slider-layer-slider/js/layerslider.kreaturamedia.jquery.js') }}" type="text/javascript"></script><!-- LayerSlider script files -->
     <script src="{{ asset('/assets/frontend/pages/scripts/layerslider-init.js') }}" type="text/javascript"></script>
     <!-- END LayerSlider -->
